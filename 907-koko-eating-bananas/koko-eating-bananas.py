@@ -5,8 +5,7 @@ class Solution:
         ceil_right = math.ceil(max(piles) * h ) +1
 
         def check_func(div):
-            piles_2=piles.copy()
-            output_iterator = map(lambda x : math.ceil(x/div), piles_2)
+            output_iterator = map(lambda x : math.ceil(x/div), piles)
             if(sum(list(output_iterator))<=h):
                 return True
             else:
