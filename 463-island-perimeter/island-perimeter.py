@@ -12,9 +12,8 @@ class Solution:
                 if(grid[row][j]>0):
                     dum_sum=4
                     for k in check:
-                        if(0<=row+k[0]<m and 0<=j+k[1]<n):
-                            if(grid[row+k[0]][j+k[1]]>0):
-                                dum_sum-=1
+                        if(0<=row+k[0]<m and 0<=j+k[1]<n and grid[row+k[0]][j+k[1]]>0):
+                            dum_sum-=1
                     perimeter+=dum_sum
 
         return perimeter
