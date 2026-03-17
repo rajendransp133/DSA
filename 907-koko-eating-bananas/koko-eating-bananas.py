@@ -2,7 +2,7 @@ import math
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
         ceil_left=math.ceil(sum(piles)/h)
-        ceil_right = math.ceil(max(piles) * h ) +1
+        ceil_right = math.ceil(max(piles)) +1
 
         def check_func(div):
             output_iterator = map(lambda x : math.ceil(x/div), piles)
