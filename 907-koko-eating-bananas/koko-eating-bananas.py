@@ -6,10 +6,8 @@ class Solution:
 
         def check_func(div):
             output_iterator = map(lambda x : math.ceil(x/div), piles)
-            if(sum(list(output_iterator))<=h):
-                return True
-            else:
-                return False
+            return sum(list(output_iterator))<=h
+           
         curr_global=-1
 
         while(ceil_left<ceil_right):
