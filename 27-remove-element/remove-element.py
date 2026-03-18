@@ -4,10 +4,6 @@ class Solution:
         left=0
         right=len(nums)-1
 
-        if(len(nums)==1):
-            if(nums[0]==val):
-                return 0
-
         while(left<=right):
             if(nums[left]==val):
                 nums[left]="_"
