@@ -1,0 +1,27 @@
+class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        count =0
+        visited_set=set()
+        checks=[(0,1),(0,-1),(1,0),(-1,0)]
+        m=len(grid)
+        n=len(grid[0])
+        for i in range(m):
+            for j in range(n):
+                if(grid[i][j]=="0"):
+                    visited_set.add((i,j))
+        
+        for i in range(m):
+            for j in range(n):
+                if(grid[i][j]=="1" and (i,j) not in visited_set):
+                    count+=1
+                    Q=[(i,j)]
+                    while(Q):
+                        return_val=Q.pop(0)
+                        for k in checks:
+                            x=return_val[0]+k[0]
+                            y=return_val[1]+k[1]
+                            if((0<=x<m) and (0<=y<n) and (x,y) not in visited_set):
+                                Q.append((x,y))
+                                visited_set.add((x,y))
+
+        return count
