@@ -1,7 +1,6 @@
 class Solution:
     def asteroidCollision(self, asteroids: List[int]) -> List[int]:
         stack=[]
-        breaked=False
         for i in asteroids:
             if(i<0):
                 breaked=False
