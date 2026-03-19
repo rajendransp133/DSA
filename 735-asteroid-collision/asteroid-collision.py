@@ -2,18 +2,20 @@ class Solution:
     def asteroidCollision(self, asteroids: List[int]) -> List[int]:
         stack=[]
         for i in asteroids:
-            if(i<0):
+            if(i>0):
+                stack.append(i)
+            else:
                 breaked=False
                 while(stack):
-                    poped_value=stack[-1]
-                    if(poped_value<0):
+                    peak_value=stack[-1]
+                    if(peak_value<0):
                         stack.append(i)
                         breaked=True
                         break
-                    if(poped_value>0 and poped_value>abs(i)):
+                    if(peak_value>0 and peak_value>abs(i)):
                         breaked=True
                         break
-                    elif(poped_value>0 and poped_value==abs(i)):
+                    elif(peak_value>0 and peak_value==abs(i)):
                         stack.pop()
                         breaked=True
                         break
@@ -21,8 +23,6 @@ class Solution:
                         stack.pop()
                 if(len(stack)==0 and not breaked):
                     stack.append(i)
-            else:
-                stack.append(i)
         return stack
                     
 
