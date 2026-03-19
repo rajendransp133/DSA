@@ -5,21 +5,20 @@ class Solution:
             if(i<0):
                 breaked=False
                 while(stack):
-                    poped_value=stack.pop()
+                    poped_value=stack[-1]
                     if(poped_value<0):
-                        stack.append(poped_value)
                         stack.append(i)
                         breaked=True
                         break
                     if(poped_value>0 and poped_value>abs(i)):
-                        stack.append(poped_value)
                         breaked=True
                         break
                     elif(poped_value>0 and poped_value==abs(i)):
+                        stack.pop()
                         breaked=True
                         break
                     else:
-                        pass
+                        stack.pop()
                 if(len(stack)==0 and not breaked):
                     stack.append(i)
             else:
