@@ -5,7 +5,6 @@ class Solution:
         curr_sum=0
         for j in range(len(nums)):
             curr_sum+=nums[j]
-            print(i,j)
             while(curr_sum>=target):
                 min_val=min(min_val,j-i+1)
                 curr_sum -= nums[i]
