@@ -1,23 +1,22 @@
 class Solution:
     def shipWithinDays(self, weights: List[int], days: int) -> int:
-        left= math.ceil(sum(weights)//days)
+        left= max(weights)
         right=sum(weights)
 
-        def check_enough(val,days):
-            count=0
-            for i in range(len(weights)):
-                count+=weights[i]
-                while(count>val and days>0):
-                    count=weights[i]
-                    days-=1
-                if(days==0):
-                    return False
-            return True
+        def can_ship(capacity):
+            days_used = 1
+            current = 0
+            for w in weights:
+                if current + w > capacity:
+                    days_used += 1
+                    current = 0
+                current += w
+            return days_used <= days
 
 
         while(left<right):
             mid=(left+right)//2
-            if(check_enough(mid,days)):
+            if(can_ship(mid)):
                 right=mid
             else:
                 left=mid+1
