@@ -3,7 +3,7 @@ class Solution:
         left= math.ceil(sum(weights)//days)
         right=(max(weights)*len(weights))
 
-        def check_enough(val,weights,days):
+        def check_enough(val,days):
             count=0
             for i in range(len(weights)):
                 count+=weights[i]
@@ -17,7 +17,7 @@ class Solution:
 
         while(left<right):
             mid=(left+right)//2
-            if(check_enough(mid,weights,days)):
+            if(check_enough(mid,days)):
                 right=mid
             else:
                 left=mid+1
