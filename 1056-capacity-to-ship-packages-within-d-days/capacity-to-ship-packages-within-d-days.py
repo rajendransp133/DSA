@@ -1,7 +1,7 @@
 class Solution:
     def shipWithinDays(self, weights: List[int], days: int) -> int:
         left= math.ceil(sum(weights)//days)
-        right=(max(weights)*len(weights))
+        right=sum(weights)
 
         def check_enough(val,days):
             count=0
