@@ -9,7 +9,6 @@ class Solution:
                 final_return_list_updated.append(j.copy())
                 j.append(num)
                 final_return_list_updated.append(j)
-                print(final_return_list_updated)
             return final_return_list_updated
 
         for i in nums:
