@@ -4,12 +4,12 @@ class Solution:
         final_return_list=[[]]
 
         def recursion(arr,num):
-            final_return_list_updated=[]
-            for j in arr:
-                final_return_list_updated.append(j.copy())
-                j.append(num)
-                final_return_list_updated.append(j)
-            return final_return_list_updated
+            n=len(arr)
+            for j in arr[:n]:
+                j_new=j.copy()
+                j_new.append(num)
+                arr.append(j_new)
+            return arr
 
         for i in nums:
             final_return_list=recursion(final_return_list,i)
