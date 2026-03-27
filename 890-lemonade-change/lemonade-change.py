@@ -4,13 +4,13 @@ class Solution:
         for i in bills:
             if(i==5):
                 hashmap[5]+=1
-            if(i==10):
+            elif(i==10):
                 if(hashmap[5]==0):
                     return False
                 else:
                     hashmap[10]+=1
                     hashmap[5]-=1
-            if(i==20):
+            else:
                 if(hashmap[10]>0 and hashmap[5]>0):
                     hashmap[10]-=1
                     hashmap[5]-=1
