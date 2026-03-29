@@ -7,9 +7,10 @@ class Solution:
         return_arr=[0,1]
         curr_floor=1
         for i in range(2,n+1):
-            if(i%curr_floor == 0):
+            offset=i%curr_floor
+            if(offset== 0):
                 curr_floor*=2
-            return_arr.append(return_arr[i%curr_floor]+1)
+            return_arr.append(return_arr[offset]+1)
 
         return return_arr
 
